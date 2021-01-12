@@ -32,7 +32,8 @@ export class Css implements CssGenerator {
         if (this.breakpoint)
             className = this.breakpoint + '\\:' + className;
 
-        this.write(`.${className} {`);
+        const line = `.${className} {`
+        this.write(this.format ? line : line.replace(' ', ''));
         this.indent += 1;
     }
 
