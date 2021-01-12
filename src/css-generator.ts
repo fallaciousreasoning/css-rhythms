@@ -28,7 +28,7 @@ export class Css implements CssGenerator {
     }
 
     writeStartClass(...classParts: (string | number)[]) {
-        let className = classParts.filter(p => p !== undefined).join('-');
+        let className = classParts.filter(p => p !== '').join('-');
         if (this.breakpoint)
             className = this.breakpoint + '\\:' + className;
 
@@ -38,7 +38,7 @@ export class Css implements CssGenerator {
 
     writeValue(propertyName: string | string[], value: string | number, units: string = '') {
         if (Array.isArray(propertyName))
-            propertyName = propertyName.filter(p => p !== undefined).join('-');
+            propertyName = propertyName.filter(p => p !== '').join('-');
         this.write(`${propertyName}: ${value}${units};`)
     }
 
