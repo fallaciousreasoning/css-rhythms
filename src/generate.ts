@@ -20,6 +20,17 @@ const run = async () => {
                     generator.writeValue([spaceType, side], spacing, 'px');
                     generator.endBlock();
                 }
+
+
+                generator.writeStartClass(spaceType, 'x', spacing);
+                generator.writeValue([spaceType, 'left'], spacing, 'px');
+                generator.writeValue([spaceType, 'right'], spacing, 'px');
+                generator.endBlock();
+
+                generator.writeStartClass(spaceType, 'y', spacing);
+                generator.writeValue([spaceType, 'top'], spacing, 'px');
+                generator.writeValue([spaceType, 'bottom'], spacing, 'px');
+                generator.endBlock();
             }
         }
 
