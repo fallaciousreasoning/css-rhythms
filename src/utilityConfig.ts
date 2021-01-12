@@ -1,5 +1,11 @@
 export const sides = ['top', 'bottom', 'left', 'right'] as const;
 export const spaceTypes = ['margin', 'padding'] as const;
+export const colorTypes = ['border-color', 'color', 'background-color'] as const;
+export const colorAliases = {
+    'border-color': 'border',
+    'color': 'text',
+    'background-color': 'background'
+}
 
 export type Side = typeof sides[number];
 export type SpaceType = typeof spaceTypes[number];

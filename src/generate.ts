@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import { Css } from './css-generator';
-import { sides, spaceTypes, UtilityConfig } from './utilityConfig';
+import { colorAliases, colorTypes, sides, spaceTypes, UtilityConfig } from './utilityConfig';
 
 const loadConfig = (filename: string) => fs.readFile(filename).then(b => b.toString('utf-8')).then(text => JSON.parse(text)) as Promise<UtilityConfig>;
 
@@ -34,7 +34,15 @@ const run = async () => {
             }
         }
 
-
+        for (const color in config.colors) {
+            const value = config.colors[color];
+            for (const colorType of colorTypes) {
+                const friendlyName = colorAliases[colorType];
+                generator.writeStartClass(friendlyName, color);
+                generator.writeValue([colorType], value);
+                generator.endBlock();
+            }
+        }
         generator.endBlock();
     }
 
