@@ -1,0 +1,26 @@
+{
+  "name": "css-rhythms",
+  "version": "1.0.0",
+  "description": "A project for generating css utility classes",
+  "main": "generate.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/generate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "css-rhythms"
+  },
+  "keywords": [
+    "css",
+    "utility"
+  ],
+  "author": "fallaciousreasoning",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^14.14.20",
+    "fs": "0.0.1-security",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
