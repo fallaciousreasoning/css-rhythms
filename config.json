@@ -15,5 +15,16 @@
         "red": "#FF0000",
         "green": "#00FF00",
         "blue": "#0000FF"
+    },
+    "aliases": {
+        "margin": "m",
+        "padding": "p",
+        "top": "t",
+        "bottom": "b",
+        "left": "l",
+        "right": "r",
+        "color": "text",
+        "background-color": "bg",
+        "border-color": "border"
     }
 }
