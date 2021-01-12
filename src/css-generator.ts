@@ -14,7 +14,7 @@ export class Css implements CssGenerator {
 
     write(value: string) {
         const prefix = this.format ? '\t'.repeat(this.indent) : '';
-        const endline = '';// this.format ? '\n' : '';
+        const endline = this.format ? '\n' : '';
         this.output.write(`${prefix}${value}${endline}`);
     }
 

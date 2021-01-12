@@ -1,13 +1,18 @@
 import fs from 'fs/promises';
+import f from 'fs';
 import { Css } from './css-generator';
 import { colorAliases, colorTypes, sides, spaceTypes, UtilityConfig } from './utilityConfig';
 
 const loadConfig = (filename: string) => fs.readFile(filename).then(b => b.toString('utf-8')).then(text => JSON.parse(text)) as Promise<UtilityConfig>;
+const createOutputStream = (filename: string) => f.createWriteStream(filename);
 
 const run = async () => {
     const config = await loadConfig("config.json");
-    const generator = new Css({ write: console.log });
+    const outputStream = createOutputStream('dist/output.css');
+
+    const generator = new Css({ write: (value: string) => outputStream.write(value) });
     config.breakpoints[''] = 0;
+
 
     for (const breakpoint of Object.keys(config.breakpoints).sort((a, b) => (config.breakpoints[a] - config.breakpoints[b]))) {
         const breakpointSize = config.breakpoints[breakpoint];
