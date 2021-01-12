@@ -9,6 +9,7 @@ export const colorAliases = {
 
 export type Side = typeof sides[number];
 export type SpaceType = typeof spaceTypes[number];
+export type Aliases = { [key: string]: string }
 
 type Spacing<T extends string> = `${T}` | `${T}-${Side}`;
 type CssProperty = Spacing<SpaceType>;
@@ -23,5 +24,5 @@ export interface UtilityConfig {
     colors: {
         [name: string]: string;
     }
-    properties: { [P in CssProperty]?: string }
+    aliases: Aliases;
 }

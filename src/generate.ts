@@ -10,7 +10,7 @@ const run = async () => {
     const config = await loadConfig("config.json");
     const outputStream = createOutputStream('dist/output.css');
 
-    const generator = new Css({ write: (value: string) => outputStream.write(value) });
+    const generator = new Css({ write: (value: string) => outputStream.write(value) }, config.aliases || {});
     config.breakpoints[''] = 0;
 
 

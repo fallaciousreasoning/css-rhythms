@@ -1,15 +1,18 @@
 import CssGenerator from "./generator";
-import { Side, SpaceType } from "./utilityConfig";
+import { Aliases, Side, SpaceType } from "./utilityConfig";
 
 export class Css implements CssGenerator {
     output: { write: (value: string) => void }
+    aliases: Aliases;
+
     indent = 0;
     format = true;
 
     breakpoint: string = '';
 
-    constructor(output: Css['output']) {
+    constructor(output: Css['output'], aliases: Aliases) {
         this.output = output;
+        this.aliases = aliases;
     }
 
     write(value: string) {
@@ -21,14 +24,22 @@ export class Css implements CssGenerator {
     beginBreakpoint(name: string, size: number) {
         if (!name || name.length == 0)
             return;
-        
+
         this.breakpoint = name;
         this.write(`@media only screen and (max-width:${size}px){`);
         this.indent += 1;
     }
 
+    joinName(parts: (string | number)[]) {
+        return parts.filter(p => p !== undefined && p !== '').join('-');
+    }
+
+    aliasedName(parts: (string | number)[]) {
+        return this.joinName(parts.map(p => this.aliases[p] || p));
+    }
+
     writeStartClass(...classParts: (string | number)[]) {
-        let className = classParts.filter(p => p !== '').join('-');
+        let className = this.aliasedName(classParts);
         if (this.breakpoint)
             className = this.breakpoint + '\\:' + className;
 
@@ -37,16 +48,15 @@ export class Css implements CssGenerator {
         this.indent += 1;
     }
 
-    writeValue(propertyName: string | string[], value: string | number, units: string = '') {
-        if (Array.isArray(propertyName))
-            propertyName = propertyName.filter(p => p !== '').join('-');
+    writeValue(propertyNameParts: string[], value: string | number, units: string = '') {
+        const propertyName = this.joinName(propertyNameParts);
         this.write(`${propertyName}: ${value}${units};`)
     }
 
     endBlock() {
         if (this.indent === 0)
             return;
-            
+
         if (this.breakpoint) {
             this.breakpoint = '';
         }
