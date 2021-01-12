@@ -13,6 +13,9 @@ export interface UtilityConfig {
     spacing: number[];
     breakpoints: {
         [name: string]: number;
+    },
+    colors: {
+        [name: string]: string;
     }
     properties: { [P in CssProperty]?: string }
 }

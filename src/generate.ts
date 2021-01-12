@@ -9,21 +9,21 @@ const run = async () => {
     const generator = new Css({ write: console.log });
     config.breakpoints[''] = 0;
 
-    for (const breakpoint in config.breakpoints) {
+    for (const breakpoint of Object.keys(config.breakpoints).sort((a, b) => (config.breakpoints[a] - config.breakpoints[b]))) {
         const breakpointSize = config.breakpoints[breakpoint];
         generator.beginBreakpoint(breakpoint, breakpointSize);
 
         for (const spaceType of spaceTypes) {
-            generator.writeStartSpacing(spaceType);
             for (const spacing of config.spacing) {
-                for (const side of sides) {
-                    generator.writeStartSide(side);
-                    generator.writeValue(spacing);
+                for (const side of ['', ...sides]) {
+                    generator.writeStartClass(spaceType, side, spacing);
+                    generator.writeValue([spaceType, side], spacing, 'px');
                     generator.endBlock();
                 }
             }
-            generator.endBlock();
         }
+
+
         generator.endBlock();
     }
 

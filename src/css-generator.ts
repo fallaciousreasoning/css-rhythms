@@ -7,29 +7,6 @@ export class Css implements CssGenerator {
     format = true;
 
     breakpoint: string = '';
-    spaceType: string = '';
-    spaceSide: string = '';
-
-    get className() {
-        let result = '';
-        if (this.breakpoint)
-            result += `${this.breakpoint}\\:`
-        if (this.spaceType)
-            result += `${this.spaceType}`;
-        if (this.spaceSide)
-            result += `-${this.spaceSide}`;
-        return result;
-    }
-
-    get cssProperty() {
-        let result = '';
-        if (this.spaceType)
-            result += this.spaceType;
-        if (this.spaceSide)
-            result += `-${this.spaceSide}`;
-        return result;
-    }
-
 
     constructor(output: Css['output']) {
         this.output = output;
@@ -46,36 +23,35 @@ export class Css implements CssGenerator {
             return;
         
         this.breakpoint = name;
-        this.write(`@media only screen and (min-width:${size}px){`);
+        this.write(`@media only screen and (max-width:${size}px){`);
         this.indent += 1;
     }
 
-    writeStartSpacing(spacing: SpaceType) {
-        this.spaceType = spacing;
-    }
+    writeStartClass(...classParts: (string | number)[]) {
+        let className = classParts.filter(p => p !== undefined).join('-');
+        if (this.breakpoint)
+            className = this.breakpoint + '\\:' + className;
 
-    writeStartSide(side: Side) {
-        this.spaceSide = side;
-    }
-
-    writeValue(value: number) {
-        this.write(`.${this.className}-${value} {`)
+        this.write(`.${className} {`);
         this.indent += 1;
-        this.write(`${this.cssProperty}: ${value}px;`)
-        this.indent -= 1;
-        this.write('}');
+    }
+
+    writeValue(propertyName: string | string[], value: string | number, units: string = '') {
+        if (Array.isArray(propertyName))
+            propertyName = propertyName.filter(p => p !== undefined).join('-');
+        this.write(`${propertyName}: ${value}${units};`)
     }
 
     endBlock() {
-        if (this.spaceSide)
-            this.spaceSide = '';
-        else if (this.spaceType)
-            this.spaceType = '';
-        else if (this.breakpoint) {
+        if (this.indent === 0)
+            return;
+            
+        if (this.breakpoint) {
             this.breakpoint = '';
-            this.indent -= 1;
-            this.write('}');
         }
+
+        this.indent -= 1;
+        this.write('}');
     }
 }
 
