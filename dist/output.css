@@ -878,7 +878,7 @@
 .text-foreground {
 	color: black;
 }
-.background-foreground {
+.bg-foreground {
 	background-color: black;
 }
 .border-background {
@@ -887,7 +887,7 @@
 .text-background {
 	color: white;
 }
-.background-background {
+.bg-background {
 	background-color: white;
 }
 .border-transparent {
@@ -896,7 +896,7 @@
 .text-transparent {
 	color: transparent;
 }
-.background-transparent {
+.bg-transparent {
 	background-color: transparent;
 }
 .border-primary {
@@ -905,7 +905,7 @@
 .text-primary {
 	color: #FF00FF;
 }
-.background-primary {
+.bg-primary {
 	background-color: #FF00FF;
 }
 .border-red {
@@ -914,7 +914,7 @@
 .text-red {
 	color: #FF0000;
 }
-.background-red {
+.bg-red {
 	background-color: #FF0000;
 }
 .border-green {
@@ -923,7 +923,7 @@
 .text-green {
 	color: #00FF00;
 }
-.background-green {
+.bg-green {
 	background-color: #00FF00;
 }
 .border-blue {
@@ -932,7 +932,7 @@
 .text-blue {
 	color: #0000FF;
 }
-.background-blue {
+.bg-blue {
 	background-color: #0000FF;
 }
 @media only screen and (max-width:480px){
@@ -1816,7 +1816,7 @@
 	.text-foreground {
 		color: black;
 	}
-	.background-foreground {
+	.bg-foreground {
 		background-color: black;
 	}
 	.border-background {
@@ -1825,7 +1825,7 @@
 	.text-background {
 		color: white;
 	}
-	.background-background {
+	.bg-background {
 		background-color: white;
 	}
 	.border-transparent {
@@ -1834,7 +1834,7 @@
 	.text-transparent {
 		color: transparent;
 	}
-	.background-transparent {
+	.bg-transparent {
 		background-color: transparent;
 	}
 	.border-primary {
@@ -1843,7 +1843,7 @@
 	.text-primary {
 		color: #FF00FF;
 	}
-	.background-primary {
+	.bg-primary {
 		background-color: #FF00FF;
 	}
 	.border-red {
@@ -1852,7 +1852,7 @@
 	.text-red {
 		color: #FF0000;
 	}
-	.background-red {
+	.bg-red {
 		background-color: #FF0000;
 	}
 	.border-green {
@@ -1861,7 +1861,7 @@
 	.text-green {
 		color: #00FF00;
 	}
-	.background-green {
+	.bg-green {
 		background-color: #00FF00;
 	}
 	.border-blue {
@@ -1870,7 +1870,7 @@
 	.text-blue {
 		color: #0000FF;
 	}
-	.background-blue {
+	.bg-blue {
 		background-color: #0000FF;
 	}
 }
@@ -2755,7 +2755,7 @@
 	.text-foreground {
 		color: black;
 	}
-	.background-foreground {
+	.bg-foreground {
 		background-color: black;
 	}
 	.border-background {
@@ -2764,7 +2764,7 @@
 	.text-background {
 		color: white;
 	}
-	.background-background {
+	.bg-background {
 		background-color: white;
 	}
 	.border-transparent {
@@ -2773,7 +2773,7 @@
 	.text-transparent {
 		color: transparent;
 	}
-	.background-transparent {
+	.bg-transparent {
 		background-color: transparent;
 	}
 	.border-primary {
@@ -2782,7 +2782,7 @@
 	.text-primary {
 		color: #FF00FF;
 	}
-	.background-primary {
+	.bg-primary {
 		background-color: #FF00FF;
 	}
 	.border-red {
@@ -2791,7 +2791,7 @@
 	.text-red {
 		color: #FF0000;
 	}
-	.background-red {
+	.bg-red {
 		background-color: #FF0000;
 	}
 	.border-green {
@@ -2800,7 +2800,7 @@
 	.text-green {
 		color: #00FF00;
 	}
-	.background-green {
+	.bg-green {
 		background-color: #00FF00;
 	}
 	.border-blue {
@@ -2809,7 +2809,7 @@
 	.text-blue {
 		color: #0000FF;
 	}
-	.background-blue {
+	.bg-blue {
 		background-color: #0000FF;
 	}
 }
@@ -3694,7 +3694,7 @@
 	.text-foreground {
 		color: black;
 	}
-	.background-foreground {
+	.bg-foreground {
 		background-color: black;
 	}
 	.border-background {
@@ -3703,7 +3703,7 @@
 	.text-background {
 		color: white;
 	}
-	.background-background {
+	.bg-background {
 		background-color: white;
 	}
 	.border-transparent {
@@ -3712,7 +3712,7 @@
 	.text-transparent {
 		color: transparent;
 	}
-	.background-transparent {
+	.bg-transparent {
 		background-color: transparent;
 	}
 	.border-primary {
@@ -3721,7 +3721,7 @@
 	.text-primary {
 		color: #FF00FF;
 	}
-	.background-primary {
+	.bg-primary {
 		background-color: #FF00FF;
 	}
 	.border-red {
@@ -3730,7 +3730,7 @@
 	.text-red {
 		color: #FF0000;
 	}
-	.background-red {
+	.bg-red {
 		background-color: #FF0000;
 	}
 	.border-green {
@@ -3739,7 +3739,7 @@
 	.text-green {
 		color: #00FF00;
 	}
-	.background-green {
+	.bg-green {
 		background-color: #00FF00;
 	}
 	.border-blue {
@@ -3748,7 +3748,7 @@
 	.text-blue {
 		color: #0000FF;
 	}
-	.background-blue {
+	.bg-blue {
 		background-color: #0000FF;
 	}
 }
@@ -4633,7 +4633,7 @@
 	.text-foreground {
 		color: black;
 	}
-	.background-foreground {
+	.bg-foreground {
 		background-color: black;
 	}
 	.border-background {
@@ -4642,7 +4642,7 @@
 	.text-background {
 		color: white;
 	}
-	.background-background {
+	.bg-background {
 		background-color: white;
 	}
 	.border-transparent {
@@ -4651,7 +4651,7 @@
 	.text-transparent {
 		color: transparent;
 	}
-	.background-transparent {
+	.bg-transparent {
 		background-color: transparent;
 	}
 	.border-primary {
@@ -4660,7 +4660,7 @@
 	.text-primary {
 		color: #FF00FF;
 	}
-	.background-primary {
+	.bg-primary {
 		background-color: #FF00FF;
 	}
 	.border-red {
@@ -4669,7 +4669,7 @@
 	.text-red {
 		color: #FF0000;
 	}
-	.background-red {
+	.bg-red {
 		background-color: #FF0000;
 	}
 	.border-green {
@@ -4678,7 +4678,7 @@
 	.text-green {
 		color: #00FF00;
 	}
-	.background-green {
+	.bg-green {
 		background-color: #00FF00;
 	}
 	.border-blue {
@@ -4687,7 +4687,7 @@
 	.text-blue {
 		color: #0000FF;
 	}
-	.background-blue {
+	.bg-blue {
 		background-color: #0000FF;
 	}
 }
@@ -5572,7 +5572,7 @@
 	.text-foreground {
 		color: black;
 	}
-	.background-foreground {
+	.bg-foreground {
 		background-color: black;
 	}
 	.border-background {
@@ -5581,7 +5581,7 @@
 	.text-background {
 		color: white;
 	}
-	.background-background {
+	.bg-background {
 		background-color: white;
 	}
 	.border-transparent {
@@ -5590,7 +5590,7 @@
 	.text-transparent {
 		color: transparent;
 	}
-	.background-transparent {
+	.bg-transparent {
 		background-color: transparent;
 	}
 	.border-primary {
@@ -5599,7 +5599,7 @@
 	.text-primary {
 		color: #FF00FF;
 	}
-	.background-primary {
+	.bg-primary {
 		background-color: #FF00FF;
 	}
 	.border-red {
@@ -5608,7 +5608,7 @@
 	.text-red {
 		color: #FF0000;
 	}
-	.background-red {
+	.bg-red {
 		background-color: #FF0000;
 	}
 	.border-green {
@@ -5617,7 +5617,7 @@
 	.text-green {
 		color: #00FF00;
 	}
-	.background-green {
+	.bg-green {
 		background-color: #00FF00;
 	}
 	.border-blue {
@@ -5626,7 +5626,7 @@
 	.text-blue {
 		color: #0000FF;
 	}
-	.background-blue {
+	.bg-blue {
 		background-color: #0000FF;
 	}
 }
